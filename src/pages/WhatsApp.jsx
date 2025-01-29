@@ -27,14 +27,14 @@ function WhatsApp() {
         // main app container
         <div className="w-screen h-screen overflow-hidden">
           {/* 2 components cointainer */}
-          <div className="flex justify-start whatsapp-bp:justify-center items-center bg-[#111a21] h-screen">
+          <div className="flex justify-start whatsapp-bp:justify-center items-center bg-[#262523] h-full">
             {/* LeftMenu */}
-            <div className="bg-[#111a21] min-w-[340px] max-w-[500px] w-100 h-100">
+            <div className="bg-[#111a21] min-w-[530px] max-w-[500px] h-[910px] pt-[-30px]">
               <LeftMenu />
             </div>
 
             {/* ChatDetail */}
-            <div className="bg-[#222f35] min-w-[415px] max-w-[1120px] w-100 h-100">
+            <div className="bg-[#222f35] min-w-[355px] max-w-[1120px] w-100">
               <ChatDetail />
             </div>
           </div>

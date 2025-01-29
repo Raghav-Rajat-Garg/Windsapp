@@ -1,12 +1,13 @@
 import React from "react";
 
-function Chat({ pp, contact, msg, time, unreadMsgs, active }) {
+function Chat({ pp, chatName, latestMessage, lastUpdated, unreadMessages, active, onClick }) {
   return (
     // Chat container
     <div
-      className={`flex justify-between items-center cursor-pointer w-100 h-[85px] px-3 hover:bg-[#202d33] ${
-        active ? "bg-[#202d33]" : ""
+      className={`flex justify-between items-center cursor-pointer w-100 h-[85px] px-3 hover:bg-[#1f2c34] chat ${
+        active ? "bg-[#2b3942]" : ""
       }`}
+      onClick={onClick}
     >
       {/* Profile picture */}
       <img
@@ -20,23 +21,23 @@ function Chat({ pp, contact, msg, time, unreadMsgs, active }) {
         {/* Contact name and message */}
         <div className="flex flex-col justify-between text-white">
           {/* Contact name */}
-          <h1 className="font-medium mb-1">{contact}</h1>
+          <h1 className="font-medium mb-1">{chatName}</h1>
 
           {/* Message */}
-          <p className={`text-sm ${!unreadMsgs ? "text-neutral-400" : ""}`}>
-            {msg}
+          <p className={`text-sm ${!unreadMessages ? "text-neutral-400" : ""}`}>
+            {latestMessage}
           </p>
         </div>
 
         {/* Time and number of messages*/}
         <div className="flex flex-col justify-between items-end h-100 text-xs">
           {/* Time */}
-          <p className="text-emerald-500 min-w-[55px]">{time}</p>
+          <p className="text-emerald-500 min-w-[55px]">{lastUpdated}</p>
 
           {/* Number of messages */}
-          {unreadMsgs && (
+          {unreadMessages && (
             <div className="flex justify-center items-center bg-emerald-500 rounded-full w-[20px] h-[20px]">
-              <p className="text-emerald-900">{unreadMsgs}</p>
+              <p className="text-emerald-900">{unreadMessages}</p>
             </div>
           )}
         </div>
